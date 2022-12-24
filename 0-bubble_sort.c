@@ -1,11 +1,15 @@
 #include "sort.h"
-
+/**
+ * bubble_sort - this func sort the array with the condition bubble
+ * @array: this is the array
+ * @size: this is the size of the array
+ */
 void bubble_sort(int *array, size_t size)
 {
 	size_t new;
 	size_t new2;
 	int temp;
-	
+
 	if (!array)
 	{
 		return;
