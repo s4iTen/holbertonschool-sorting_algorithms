@@ -33,6 +33,7 @@ void insertion_sort_list(listint_t **list)
 {
 	if (list == NULL)
 		return;
+
 	listint_t *a = (*list)->next;
 
 	for (a = (*list)->next; a != NULL; a = a->next)
