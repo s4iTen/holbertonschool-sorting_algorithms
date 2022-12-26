@@ -31,23 +31,25 @@ void swapNodes(listint_t *l, listint_t *a)
  */
 void insertion_sort_list(listint_t **list)
 {
-	if (list == NULL)
-		return;
-
-	listint_t *a = (*list)->next;
-
-	for (a = (*list)->next; a != NULL; a = a->next)
+	if (list != NULL)
 	{
-		while (a != NULL && a->prev != NULL && a->n < a->prev->n)
+		listint_t *a = (*list)->next;
+
+		for (a = (*list)->next; a != NULL; a = a->next)
 		{
-			if (a->prev != NULL)
+			while (a != NULL && a->prev != NULL && a->n < a->prev->n)
 			{
-				if (a->prev->prev == NULL)
+				if (a->prev != NULL)
 				{
-					*list = a;
+					if (a->prev->prev == NULL)
+					{
+						*list = a;
+					}
+					swapNodes(*list, a);
 				}
-				swapNodes(*list, a);
 			}
 		}
 	}
+	else
+		return;
 }
