@@ -19,6 +19,25 @@ void swap(int *a, int *b)
 	*a = tmp;
 }
 /**
+ * print_sort - function that print as we want
+ * @array: this is the array that it have to be printed
+ * @size: this is the size of the array
+ * @init:this is the initialisation of the array
+ */
+void print_sort(int array[], size_t size, int init)
+{
+	static int *p = (void *)0;
+	static size_t s;
+
+	if (!p && init)
+	{
+		p = array;
+		s = size;
+	}
+	if (!init)
+		print_array(p, s);
+}
+/**
  * partition - function that sets the pivot for the quick sort
  * @array: array partition
  * @size: size of the array
@@ -51,25 +70,6 @@ size_t partition(int array[], size_t size)
 		print_sort(array, size, 0);
 	}
 	return (i + 1);
-}
-/**
- * print_sort - function that print as we want
- * @array: this is the array that it have to be printed
- * @size: this is the size of the array
- * @init:this is the initialisation of the array
- */
-void print_sort(int array[], size_t size, int init)
-{
-	static int *p = (void *)0;
-	static size_t s;
-
-	if (!p && init)
-	{
-		p = array;
-		s = size;
-	}
-	if (!init)
-		print_array(p, s);
 }
 
 void quick_sort(int *array, size_t size)
