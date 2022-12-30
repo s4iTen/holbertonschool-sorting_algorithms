@@ -1,11 +1,5 @@
 #include "sort.h"
 /**
- * quick_sort - this function sort the array and it based
- * on the quick sort algorithm
- * @array: this is the array that have to be sorted
- * @size: this is the size of the array
- */
-/**
  * swap - this function swap two values
  * @a: this is an integers 'a' that have to be swaped
  * @b: this is an integers 'b' that have to be swaped
@@ -71,7 +65,12 @@ size_t partition(int array[], size_t size)
 	}
 	return (i + 1);
 }
-
+/**
+ * quick_sort - this function sort the array and it based
+ * on the quick sort algorithm
+ * @array: this is the array that have to be sorted
+ * @size: this is the size of the array
+ */
 void quick_sort(int *array, size_t size)
 {
 	size_t pivot;
