@@ -74,8 +74,8 @@ size_t partition(int array[], size_t size)
  */
 void print_sort(int array[], size_t size, int init)
 {
-	int *p = (void *)0;
-	size_t s;
+	static int *p = (void *)0;
+	static size_t s;
 
 	if (!p && init)
 	{
