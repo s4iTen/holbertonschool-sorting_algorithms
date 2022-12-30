@@ -5,20 +5,6 @@
  * @array: this is the array that have to be sorted
  * @size: this is the size of the array
  */
-void quick_sort(int *array, size_t size)
-{
-	size_t pivot;
-
-	if (!array || size < 2)
-		return;
-	print_sort(array, size, 1);
-	/* partition and get pivot index */
-	pivot = partition(array, size);
-	/* repeat for left of index */
-	quick_sort(array, pivot);
-	/* repeat for index and right */
-	quick_sort(array + pivot, size - pivot);
-}
 /**
  * swap - this function swap two values
  * @a: this is an integers 'a' that have to be swaped
@@ -84,4 +70,19 @@ void print_sort(int array[], size_t size, int init)
 	}
 	if (!init)
 		print_array(p, s);
+}
+
+void quick_sort(int *array, size_t size)
+{
+	size_t pivot;
+
+	if (!array || size < 2)
+		return;
+	print_sort(array, size, 1);
+	/* partition and get pivot index */
+	pivot = partition(array, size);
+	/* repeat for left of index */
+	quick_sort(array, pivot);
+	/* repeat for index and right */
+	quick_sort(array + pivot, size - pivot);
 }
